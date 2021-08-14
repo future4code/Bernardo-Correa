@@ -42,7 +42,8 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
-  
+  return array.length
+  // Deve haver um jeito mais complicado de fazer isso...
 }
 
 // EXERCÍCIO 06
