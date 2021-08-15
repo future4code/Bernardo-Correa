@@ -186,12 +186,14 @@ return pessoaAnonimizada
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
-
+  arrayDePessoasMaioresDeIdade = arrayDePessoas.filter((pessoa, indice, array) => {if (pessoa.idade >= 18) return pessoa})
+  return arrayDePessoasMaioresDeIdade
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-
+  arrayDePessoasMenoresDeIdade = arrayDePessoas.filter((pessoa, indice, array) => {if (pessoa.idade < 18) return pessoa})
+  return arrayDePessoasMenoresDeIdade
 }
 
 // EXERCÍCIO 17A
