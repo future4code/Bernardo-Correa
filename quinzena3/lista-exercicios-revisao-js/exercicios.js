@@ -198,17 +198,20 @@ function menoresDe18(arrayDePessoas) {
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-
+  arrayVezesDois = array.map((item, indice, array) => item * 2)
+  return arrayVezesDois
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
-
+  arrayVezesDoisEmString = array.map((item, indice, array) => (item * 2).toString())
+  return arrayVezesDoisEmString
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
-
+  arrayParEImpar = array.map((item, indice, array) => {if (item % 2 === 0) {return `${item} é par`} else {return `${item} é ímpar`}})
+  return arrayParEImpar
 }
 
 // EXERCÍCIO 18A
