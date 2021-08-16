@@ -131,12 +131,13 @@ function segundoMaiorEMenor(array) {
 // EXERCÍCIO 11
 function ordenaArray(array) {
   for (i = 0; i < array.length; i++) {
-    for (j = 0; j < array.length; j++)
+    for (j = 0; j < array.length; j++) {
       if (array[j] > array[j+1]) {
         let temp = array[j]
         array[j] = array[j+1]
         array[j+1] = temp
       }
+    }
   }
 return array
 }
@@ -162,7 +163,7 @@ function imprimeChamada() {
     atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
   }
   return `Venha assistir ao filme ${filmeFavoritoAstroDev.nome}, de ${filmeFavoritoAstroDev.ano}, dirigido por ${filmeFavoritoAstroDev.diretor} e estrelado por ${filmeFavoritoAstroDev.atores[0]}, ${filmeFavoritoAstroDev.atores[1]}, ${filmeFavoritoAstroDev.atores[2]}, ${filmeFavoritoAstroDev.atores[3]}.`
-}
+} // Essa forma de imprimir os atores não é a mais elegante.
 
 // EXERCÍCIO 14
 function criaRetangulo(lado1, lado2) {
@@ -228,30 +229,55 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
-consultasNome.sort((a, b) => {
-  if (a.nome < b.nome) {return -1}
-  if (a.nome > b.nome) {return 1}
-  return 0
-})
-return consultasNome
-// Não consegui fazer sem a função sort(), e tive que pesquisar o código.
+  for (i = 0; i < consultasNome.length; i++) {
+    for (j = 0; j < consultasNome.length; j++) {
+      if (consultasNome[j].nome > consultasNome[j+1].nome) {
+        let temp = consultasNome[j].nome
+        consultasNome[j].nome = consultasNome[j+1].nome
+        consultasNome.nome[j+1] = temp
+      }
+    }
+  } return consultasNome
+
 }
 
 // EXERCÍCIO 19B
 function ordenaPorData(consultasData) {
-  consultasData.sort((a, b) => {
-    if (new Date(a.dataDaConsulta) < new Date(b.dataDaConsulta)) {return -1}
-    if (new Date(a.dataDaConsulta) > new Date(b.dataDaConsulta)) {return 1}
-    else return 0
-  })
+  for (i = 0; i < consultasData.length; i++) {
+    for (j = 0; j < consultasData.length - i - 1; j++) {
+      const dataSeparada1 = consultasData[j].dataDaConsulta.split('/')
+      const dia1 = Number(dataSeparada1[0])
+      const mes1 = Number(dataSeparada1[1])
+      const ano1 = Number(dataSeparada1[2])
+
+      const dataSeparada2 = consultasData[j + 1].dataDaConsulta.split('/')
+      const dia2 = Number(dataSeparada2[0])
+      const mes2 = Number(dataSeparada2[1])
+      const ano2 = Number(dataSeparada2[2])
+
+      const data1 = new Date(ano1, mes1 - 1, dia1).getTime()
+      const data2 = new Date(ano2, mes2 - 1, dia2).getTime()
+
+      if (data1 > data2) {
+        let temp = consultasData[j]
+        consultasData[j] = consultasData[j+1]
+        consultasData[j+1] = temp
+      }
+    }
+  }
   return consultasData
 }
+// Código praticamente todo copiado da sugestão de resolução.
 
 // EXERCÍCIO 20
 function calculaSaldo(contas) {
-return contas.map((cliente, indice, array) => {
-  for (indice = 0; indice < cliente.compras.length; indice++) {
-  cliente.saldoTotal =- cliente.compras[indice]
-}
+contas.forEach((cliente, indice, array) => {
+  let totalCompras = 0
+  cliente.compras.forEach((valor, indice, array) => {
+    totalCompras += valor
+  })
+  cliente.saldoTotal -= totalCompras
 })
+return contas
 }
+// De novo, me baseei na resolução sugerida.
