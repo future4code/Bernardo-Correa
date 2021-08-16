@@ -230,15 +230,15 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
   for (i = 0; i < consultasNome.length; i++) {
-    for (j = 0; j < consultasNome.length; j++) {
+    for (j = 0; j < consultasNome.length - i - 1; j++) {
       if (consultasNome[j].nome > consultasNome[j+1].nome) {
-        let temp = consultasNome[j].nome
-        consultasNome[j].nome = consultasNome[j+1].nome
-        consultasNome.nome[j+1] = temp
+        let temp = consultasNome[j]
+        consultasNome[j] = consultasNome[j+1]
+        consultasNome[j+1] = temp
       }
     }
-  } return consultasNome
-
+  } 
+return consultasNome
 }
 
 // EXERCÍCIO 19B
