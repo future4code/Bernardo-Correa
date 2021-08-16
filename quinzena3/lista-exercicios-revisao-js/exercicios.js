@@ -228,15 +228,30 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
-
+consultasNome.sort((a, b) => {
+  if (a.nome < b.nome) {return -1}
+  if (a.nome > b.nome) {return 1}
+  return 0
+})
+return consultasNome
+// Não consegui fazer sem a função sort(), e tive que pesquisar o código.
 }
 
 // EXERCÍCIO 19B
 function ordenaPorData(consultasData) {
-
+  consultasData.sort((a, b) => {
+    if (new Date(a.dataDaConsulta) < new Date(b.dataDaConsulta)) {return -1}
+    if (new Date(a.dataDaConsulta) > new Date(b.dataDaConsulta)) {return 1}
+    else return 0
+  })
+  return consultasData
 }
 
 // EXERCÍCIO 20
 function calculaSaldo(contas) {
-
+return contas.map((cliente, indice, array) => {
+  for (indice = 0; indice < cliente.compras.length; indice++) {
+  cliente.saldoTotal =- cliente.compras[indice]
+}
+})
 }
