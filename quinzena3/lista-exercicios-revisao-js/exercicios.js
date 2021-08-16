@@ -216,12 +216,14 @@ function verificaParidade(array) {
 
 // EXERCÍCIO 18A
 function retornaPessoasAutorizadas(pessoas) {
-
+  arrayPessoasAutorizadas = pessoas.filter((pessoas, indice, array) => {if (pessoas.altura >= 1.5 && pessoas.idade > 14 && pessoas.idade < 60) {return pessoas}})
+  return arrayPessoasAutorizadas
 }
 
 // EXERCÍCIO 18B
 function retornaPessoasNaoAutorizadas(pessoas) {
-
+  arrayPessoasNaoAutorizadas = pessoas.filter((pessoas, indice, array) => {if (pessoas.altura < 1.5 || pessoas.idade <= 14 || pessoas.idade > 60) {return pessoas}})
+  return arrayPessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 19A
