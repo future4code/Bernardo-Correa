@@ -1,3 +1,4 @@
+```
 function calculaNota(ex, p1, p2) {
   // Escreva seu código aqui
   let mediaPonderada = (ex * 1 +  p1 * 2 + p2 * 3)/ 6
@@ -11,3 +12,4 @@ function calculaNota(ex, p1, p2) {
     return "D"
   }
 }
+```

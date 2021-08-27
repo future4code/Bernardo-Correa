@@ -17,7 +17,7 @@
        cartasJogador.push(comprarCarta())
        cartasJogador.push(comprarCarta())
 
-       while (cartasJogador[0].texto === cartasJogador[1].texto && cartasJogador[1].texto === "A") {
+       while (cartasJogador[0].texto && cartasJogador[1].texto === "A") {
           cartasJogador[1] = comprarCarta()
        }
     
