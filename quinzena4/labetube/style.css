@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 .icone-e-busca {
@@ -18,6 +19,20 @@ header {
     padding: 0 20px;
 }
 
+body {
+    background-color: lightcoral;
+    min-height: 100vh;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    margin: 40px;
+}
 
 main {
     display: grid;
@@ -29,7 +44,9 @@ main {
 }
 
 .imagem {
-    max-width: 50px;
+    width: 100%;
+    max-width: 200px;
+    max-height: 180px;
 }
 
 .video {
@@ -38,6 +55,11 @@ main {
     justify-content: space-between;
     align-items: center;
     box-shadow: 2px 2px 5px black;
+    max-width: 300px;
+    max-height: 400px;
+    background-color: white;
+    text-align: center;
+
 }
 
 footer {
