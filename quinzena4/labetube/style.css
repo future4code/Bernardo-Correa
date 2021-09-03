@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.icone-e-busca {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    background-color: brown;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+}
+
+body {
+    background-color: lightcoral;
+    min-height: 100vh;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    margin: 40px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px;
+    background-color: lightcoral;
+}
+
+.imagem {
+    width: 100%;
+    max-width: 200px;
+    max-height: 180px;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px black;
+    max-width: 300px;
+    max-height: 400px;
+    background-color: white;
+    text-align: center;
+
+}
+
+footer {
+    background-color: brown;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+}
